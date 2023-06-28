@@ -1,0 +1,8 @@
+<h3>{{title}} works!</h3>
+
+<div>
+  <input #inputName type="text" placeholder="name">
+  <input #inputAge type="text" placeholder="age">
+  <button (click)="userService.addUser(inputName, inputAge)">Add user</button>
+</div>
+<app-users-list [users]="userService.users"/>
