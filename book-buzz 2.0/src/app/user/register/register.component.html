@@ -1,0 +1,50 @@
+<div class="content">
+    <div class="register-form">
+        <h2>Register</h2>
+        <form #form="ngForm" (ngSubmit)="register(form)">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstName" ngModel #inputFirstName="ngModel" required minlength="5">
+                <ng-container *ngIf="inputFirstName.touched">
+                    <p class="error" *ngIf="inputFirstName.errors?.['required']">First name is required!</p>
+                    <p class="error" *ngIf="inputFirstName.errors?.['minlength']">First name must be at least 5 characters!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastName" ngModel #inputLastName="ngModel" required minlength="5">
+                <ng-container *ngIf="inputLastName.touched">
+                    <p class="error" *ngIf="inputLastName.errors?.['required']">Last name is required!</p>
+                    <p class="error" *ngIf="inputLastName.errors?.['minlength']">Last name must be at least 5 characters!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="username" name="email" ngModel #inputEmail ="ngModel" required minlength="5">
+                <ng-container *ngIf="inputEmail.touched">
+                    <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+                    <p class="error" *ngIf="inputEmail.errors?.['minlength']">Email must be at least 5 characters!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" ngModel #inputPassword="ngModel" required minlength="5">
+                <ng-container *ngIf="inputPassword.touched">
+                    <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
+                    <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 5 characters!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="password-confirm">Confirm Password</label>
+                <input type="password" id="password-confirm" name="passwordConfirm" ngModel #inputRePassword="ngModel" required>
+                <ng-container *ngIf="inputRePassword.touched">
+                    <p class="error" *ngIf="inputRePassword.errors?.['required']">Repeat Password is required!</p>
+                    <p class="error" *ngIf="!isValid">Password don't match!</p>
+                </ng-container>
+            </div>
+            <!-- need to add condition to make button disabled or enabled -->
+            <button routerLink="/login" type="submit" class="button" >Register</button>
+        </form>
+        <p class="login-prompt">If you are already registered, please <a routerLink="/login">Login here</a>.</p>
+    </div>
+</div>
