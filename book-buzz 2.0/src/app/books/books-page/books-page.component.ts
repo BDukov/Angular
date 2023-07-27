@@ -20,7 +20,6 @@ export class BooksPageComponent implements OnInit {
         let key = Object.keys(this.booksList);
         let value = Object.values(this.booksList);
         this.booksList = value;
-        debugger;
       },
       error: (err: any) => {
         console.log(`Eroor: ${err}`);

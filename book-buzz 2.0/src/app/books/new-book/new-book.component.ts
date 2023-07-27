@@ -16,20 +16,6 @@ export class NewBookComponent {
     private router: Router
   ) {}
 
-  //   isValid = false;
-  //   create(form: NgForm): any {
-  //     const data = form.value;
-
-  //     if(form.invalid){
-  //       const { appUrl } = environment;
-  //       return this.http.post(`${appUrl}/books.json`, data).subscribe(response => {
-  // console.log(form.value.title);
-
-  //       })
-  //     }
-
-  //   }
-
   create(createForm: NgForm): void {
     const { appUrl } = environment;
     const data = createForm.value;

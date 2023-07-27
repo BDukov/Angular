@@ -7,27 +7,39 @@ import { AuthService } from 'src/app/shared/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   email: string = '';
   password: string = '';
 
-  constructor(private auth: AuthService) {}
+  isLoggedIn: boolean = false;
+  form: any;
 
-  ngOnInit(): void {
-    
-  }
+  constructor(
+    private userService: UserServiceService,
+    private router: Router
+  ) {}
 
-  login(form: NgForm){
-    if(form.invalid) {
-      return
+  ngOnInit(): void {}
+
+  login(form: NgForm) {
+    if (form.invalid) {
+      return;
     }
-   
-    this.auth.login(this.email, this.password);
 
-    this.email = '';
-    this.password = '';
+    this.isLoggedIn = true;
+
+    this.userService
+      .login({
+        email: form.value.email,
+        password: form.value.password,
+      })
+      .subscribe(
+        () => {
+          this.router.navigate(['/books']);
+        },
+        (error: any) => {}
+      );
   }
 }
