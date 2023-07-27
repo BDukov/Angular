@@ -21,6 +21,8 @@ export class NewBookComponent {
     const data = createForm.value;
   
     if (createForm.valid) {
+      console.log(data);
+      
       this.http.post(`${appUrl}/books.json`, data, {
           headers: {
             'Content-Type': 'application/json',

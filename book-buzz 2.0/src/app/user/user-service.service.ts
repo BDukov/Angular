@@ -10,51 +10,66 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root',
 })
 export class UserServiceService {
+  private user$$ = new BehaviorSubject<User | undefined>(undefined);
+  public user$ = this.user$$.asObservable();
 
- private user$$ = new BehaviorSubject<User | undefined>(undefined);
- public user$ = this.user$$.asObservable();
- 
   user: User | undefined;
   USER_KEY = '[user]';
 
   get isLogged(): boolean {
     return !!this.user;
   }
-  
+
   subscription: Subscription;
 
   constructor(private http: HttpClient, private auth: AngularFireAuth) {
     this.subscription = this.user$.subscribe((user) => {
-     this.user = user;
-   });
+      this.user = user;
+    });
   }
 
   login(params: Login): Observable<any> {
-    return from<any>(this.auth.signInWithEmailAndPassword(params.email, params.password))
-    .pipe(tap((user) => {
-    this.user$$.next(user)
-    localStorage.setItem(this.USER_KEY, JSON.stringify(user));
-  })
-  );
-      
+    return from<any>(
+      this.auth.signInWithEmailAndPassword(params.email, params.password)
+    ).pipe(
+      tap((user) => {
+        this.user$$.next(user);
+        localStorage.setItem(
+          this.USER_KEY,
+          JSON.stringify(user.user.refreshToken)
+        );
+      })
+    );
   }
- 
-register(user: {email: string, password: string}){
-  return this.auth.createUserWithEmailAndPassword(user.email, user.password);
-}
 
-  logout(): void {
-    this.user = undefined;
-    localStorage.removeItem(this.USER_KEY);
+  register(user: { email: string; password: string }) {
+    return this.auth.createUserWithEmailAndPassword(user.email, user.password);
+  }
+
+  logout(): any {
+    return from(this.auth.signOut())
+    .pipe(
+      tap(() => {
+        this.user$$.next(undefined);
+        localStorage.removeItem(
+          this.USER_KEY
+        );
+      })
+    );
+    
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
 
 type Login = {
   email: string;
   password: string;
-}
+};
 
 type Register = {
   email: string;
   password: string;
-}
+};

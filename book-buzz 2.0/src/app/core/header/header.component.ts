@@ -21,7 +21,7 @@ export class HeaderComponent {
   }
 
   logout(): void {
-    this.auth.logout();
+    this.userService.logout();
     this.router.navigate(['/']);
   }
 }
