@@ -5,21 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
-import { UserModule } from './user/user.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BooksModule } from './books/books.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { appInterceptorProvider } from './app.interceptor';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent, AuthenticateComponent],
   imports: [
+    SharedModule,
+    BooksModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    UserModule,
     RouterModule,
     HttpClientModule,
     FormsModule,
@@ -35,7 +39,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     }),
     AngularFireAuthModule
   ],
-  providers: [CoreModule],
+  providers: [CoreModule, appInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

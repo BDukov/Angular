@@ -1,41 +1,38 @@
-
- .content {
-    max-width: 800px;
-    margin: 81px auto;
-    padding: 11% 20px;
+.container {
+    height: 57vh;
+}
+.content {
+    width: 300rem;
+    height: 300px;
+    text-align: center;
+    padding: 10px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} 
-
-.welcome-section {
-    text-align: center;
-    margin-bottom: 40px;
+    border-color: red;
 }
 
-.welcome-section h1 {
+h2 {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.welcome-section p {
+p {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
 .button {
-    display: inline-block;
     padding: 10px 20px;
-    background-color: #f8c291; /* Warm color */
+    background-color: #e67e22; /* Darker orange color */
     color: #fff; /* White text */
     text-decoration: none;
     font-size: 16px;
+    border: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    border-radius: 50px;
 }
 
 .button:hover {
-    background-color: #ff9f4d; /* Lighter warm color on hover */
+    background-color: #d35400; /* Even darker orange color on hover */
 }
-

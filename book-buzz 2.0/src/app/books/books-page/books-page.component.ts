@@ -11,6 +11,7 @@ import { of } from 'rxjs';
 export class BooksPageComponent implements OnInit {
   booksList: Book[] | any;
   comments: string[] = [];
+  newArr = {}
 
   constructor(private bookService: BookService) {}
 
@@ -22,6 +23,7 @@ export class BooksPageComponent implements OnInit {
         let value = Object.values(this.booksList);
         this.booksList = value;
         console.log(this.booksList.comment);
+
         
         // this.comments = this.booksList.map((book: Book) => book.comment);
       },

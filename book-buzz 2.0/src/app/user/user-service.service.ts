@@ -3,7 +3,6 @@ import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subscription, from, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { environment } from '../environments/environment';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
@@ -34,10 +33,6 @@ export class UserServiceService {
     ).pipe(
       tap((user) => {
         this.user$$.next(user);
-        localStorage.setItem(
-          this.USER_KEY,
-          JSON.stringify(user.user.refreshToken)
-        );
       })
     );
   }

@@ -14,4 +14,9 @@ export class BookService{
     return this.http.get(`${appUrl}/books.json`);
   }
 
+  getBookDetails(id: string) {
+    const { appUrl } = environment;
+    return this.http.get(`${appUrl}/books/${id}`);
+  }
+
 }

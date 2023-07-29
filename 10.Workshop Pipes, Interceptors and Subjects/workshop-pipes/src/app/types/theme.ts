@@ -1,4 +1,3 @@
-import { Post } from './post';
 import { UserId } from './user-id';
 
 export interface Theme {

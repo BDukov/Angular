@@ -7,8 +7,9 @@
     </ul>
     <a routerLink="/home" class="logo">BookBuzz</a>
     <ul class="menu-right">
-        <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
-        <li *ngIf="!isLoggedIn"><a routerLink="/register">Register</a></li>
+        <li>{{ email }}</li>
+        <li *ngIf="!isLoggedIn"><a routerLink="/auth/login">Login</a></li>
+        <li *ngIf="!isLoggedIn"><a routerLink="/auth/register">Register</a></li>
         <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
     </ul>
 </nav>

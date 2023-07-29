@@ -10,3 +10,4 @@ export class SlicePipe implements PipeTransform {
     }`;
   }
 }
+ 

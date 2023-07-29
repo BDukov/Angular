@@ -1,3 +1,5 @@
+import { UserId } from './user-id';
+
 export interface Book {
     title: string;
     author: string;
@@ -6,4 +8,5 @@ export interface Book {
     description: string;
     rating: number;
     reviews: string[];
+    userId: UserId;
 }

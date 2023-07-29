@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
-import { UserRegister } from 'src/app/types/user-ragister';
 import { matchPasswordsValidator } from 'src/app/shared/validators/match-passwords-validator';
 
 @Component({
