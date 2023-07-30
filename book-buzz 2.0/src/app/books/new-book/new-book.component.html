@@ -40,14 +40,14 @@
                     <p class="error" *ngIf="inputGerne.errors?.['required']">Author is required!</p>
                 </ng-container>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="reviews">Comment</label>
                 <textarea id="reviews" name="reviews" ngModel #inputReview="ngModel" minlength="10" required></textarea>
                 <ng-container *ngIf="inputReview.touched">
                     <p class="error" *ngIf="inputReview.errors?.['required']">Comment is required!</p>
                     <p class="error" *ngIf="inputReview.errors?.['minlength']">Comment must be at least 10 characters!</p>
                 </ng-container>
-            </div>
+            </div> -->
             <div class="button-group">
                 <button [disabled]="!createForm.valid" type="submit" class="button">Post</button>
                 <!-- <button type="button" class="button">Edit</button> -->

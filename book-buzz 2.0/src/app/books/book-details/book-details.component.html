@@ -15,12 +15,12 @@
             <div class="comments">
                 <h3>Reviews</h3>
                 <!-- TODO - ng FOR all comments -->
-                <ul class="comment-list">
-                    <li class="comment">{{book.reviews}}</li>
+                <ul class="comment-list" *ngFor="let rev of review">
+                    <li class="comment">{{rev.reviewText}}</li>
                 </ul>
-                    <div class="add-comment">
-                        <input type="text" placeholder="Add a review">
-                        <button class="button" type="submit" >Add Review</button>
+                    <div class="add-comment" *ngIf="isLoggedIn">
+                        <input type="text" placeholder="Add a review" [(ngModel)]="newReview.reviewText">
+                        <button class="button" type="submit" (click)="addReview()">Add Review</button>
                     </div>
             </div>
         </div>
