@@ -12,7 +12,9 @@
                     <span class="rating-stars">⭐⭐⭐⭐⭐</span>
                     <span class="rating-value">{{book.rating}}</span>
                     <div class="button-group">
-                        <button type="button" class="button"> Details</button>
+                        <a [routerLink]="book.id" class="normal">
+                            <button type="button" class="button">Details</button>
+                        </a>
                     </div>
                 </div>
             </div>

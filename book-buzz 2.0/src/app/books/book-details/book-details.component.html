@@ -1,26 +1,27 @@
 <div class="content">
     <div class="book-details">
         <div class="book-image">
-            <img src="" alt="">
+            <img src="{{book.image}}" alt="">
         </div>
         <div class="book-info">
-            <h2 class="book-title">title</h2>
-            <p class="book-author">Author: author</p>
-            <p class="book-description">description</p>
-            <p class="book-genre">Genre: gerne</p>
+            <h2 class="book-title">{{book.title}}</h2>
+            <p class="book-author">Author: {{book.author}}</p>
+            <p class="book-description">{{book.description}}</p>
+            <p class="book-genre">Genre: {{book.genre}}</p>
             <div class="rating">
                 <span class="rating-stars">⭐⭐⭐⭐⭐</span>
                 <span class="rating-value">rating</span>
             </div>
             <div class="comments">
-                <h3>Comments</h3>
+                <h3>Reviews</h3>
+                <!-- TODO - ng FOR all comments -->
                 <ul class="comment-list">
-                    <li class="comment"></li>
+                    <li class="comment">{{book.reviews}}</li>
                 </ul>
-                <div class="add-comment">
-                    <input type="text" placeholder="Add a comment" >
-                    <button class="button">Add Comment</button>
-                </div>
+                    <div class="add-comment">
+                        <input type="text" placeholder="Add a review">
+                        <button class="button" type="submit" >Add Review</button>
+                    </div>
             </div>
         </div>
     </div>

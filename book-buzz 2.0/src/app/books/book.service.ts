@@ -16,7 +16,11 @@ export class BookService{
 
   getBookDetails(id: string) {
     const { appUrl } = environment;
-    return this.http.get(`${appUrl}/books/${id}`);
+    return this.http.get(`${appUrl}/books/${id}.json`);
   }
 
+  addreview(id: string, review: string) {
+    const { appUrl } = environment;
+    return this.http.post(`${appUrl}/books/${id}/reviews.json`, { review });
+  }
 }

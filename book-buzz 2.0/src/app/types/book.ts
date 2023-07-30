@@ -7,6 +7,6 @@ export interface Book {
     image: string;
     description: string;
     rating: number;
-    reviews: string[];
+    reviews: any; //string[] | Post[];
     userId: UserId;
 }
