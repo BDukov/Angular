@@ -1,0 +1,34 @@
+<div class="content">
+    <h2>Add Quote</h2>
+    <div class="add-quote-form">
+        <form #createForm="ngForm" (ngSubmit)="create(createForm)">
+            <div class="form-group">
+                <label for="quote">Quote</label>
+                <textarea id="quote" name="quote" ngModel #inputQuote="ngModel" required minlength="25"></textarea>
+                <ng-container *ngIf="inputQuote.touched">
+                    <p class="error" *ngIf="inputQuote.errors?.['required']">Quote is required!</p>
+                    <p class="error" *ngIf="inputQuote.errors?.['minlength']">Quote must be at least 25 characters!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="book">Book</label>
+                <input type="text" id="book" name="book" ngModel #inputBook="ngModel" required minlength="5">
+                <ng-container *ngIf="inputBook.touched">
+                    <p class="error" *ngIf="inputBook.errors?.['required']">Quote is required!</p>
+                    <p class="error" *ngIf="inputBook.errors?.['minlength']">Quote must be at least 5 characters!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" ngModel #inputAuthor="ngModel" required minlength="5">
+                <ng-container *ngIf="inputAuthor.touched">
+                    <p class="error" *ngIf="inputAuthor.errors?.['required']">Quote is required!</p>
+                    <p class="error" *ngIf="inputAuthor.errors?.['minlength']">Quote must be at least 5 characters!</p>
+                </ng-container>
+            </div>
+            <div class="button-group">
+                <button [disabled]="!createForm.valid" type="submit" class="button">Post</button>
+            </div>
+        </form>
+    </div>
+</div>

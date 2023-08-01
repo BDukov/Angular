@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, Subscription, from, of } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, from } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
@@ -9,12 +9,15 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root',
 })
 export class UserServiceService {
+  firestore(firestore: any, arg1: string, uid: any) {
+    throw new Error('Method not implemented.');
+  }
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
   public user$ = this.user$$.asObservable();
 
-  user: User | undefined;
+  user: User | undefined | any;
   USER_KEY = '[user]';
-
+  
   get isLogged(): boolean {
     return !!this.user;
   }
@@ -24,8 +27,11 @@ export class UserServiceService {
   constructor(private http: HttpClient, private auth: AngularFireAuth) {
     this.subscription = this.user$.subscribe((user) => {
       this.user = user;
+      console.log(user);
+      
     });
   }
+
 
   login(params: Login): Observable<any> {
     return from<any>(
@@ -68,3 +74,15 @@ type Register = {
   email: string;
   password: string;
 };
+function authState(auth: AngularFireAuth) {
+  throw new Error('Function not implemented.');
+}
+
+function doc(firestore: (firestore: any, arg1: string, uid: any) => void, arg1: string, uid: any) {
+  throw new Error('Function not implemented.');
+}
+
+function docData(ref: void): Observable<User> {
+  throw new Error('Function not implemented.');
+}
+

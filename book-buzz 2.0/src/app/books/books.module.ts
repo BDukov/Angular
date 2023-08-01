@@ -6,6 +6,7 @@ import { BooksRoutingModule } from './books-routing.module';
 import { NewBookComponent } from './new-book/new-book.component';
 import { FormsModule } from '@angular/forms';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { NewQuoteComponent } from './new-quote/new-quote.component';
 
 
 
@@ -14,7 +15,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     BooksPageComponent,
     QuotesComponent,
     NewBookComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    NewQuoteComponent
   ],
   imports: [
     CommonModule,

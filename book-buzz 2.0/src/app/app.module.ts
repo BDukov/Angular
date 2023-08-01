@@ -13,11 +13,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { appInterceptorProvider } from './app.interceptor';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, AuthenticateComponent],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent, ],
   imports: [
     SharedModule,
     BooksModule,

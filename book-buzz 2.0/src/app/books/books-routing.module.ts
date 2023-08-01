@@ -4,6 +4,7 @@ import { BooksPageComponent } from "./books-page/books-page.component";
 import { QuotesComponent } from "./quotes/quotes.component";
 import { NewBookComponent } from "./new-book/new-book.component";
 import { BookDetailsComponent } from "./book-details/book-details.component";
+import { NewQuoteComponent } from "./new-quote/new-quote.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
     {
         path: 'books/:bookId',
         component: BookDetailsComponent
+    },
+    {
+        path: 'add-quote',
+        component: NewQuoteComponent
     }
     
 ];

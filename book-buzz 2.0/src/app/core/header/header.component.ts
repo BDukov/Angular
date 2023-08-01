@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth.service';
 import { UserServiceService } from 'src/app/user/user-service.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { UserServiceService } from 'src/app/user/user-service.service';
 })
 export class HeaderComponent {
 
-  constructor(private userService: UserServiceService, private router: Router, private auth: AuthService) { }
+  constructor(private userService: UserServiceService, private router: Router) { }
 
   get isLoggedIn(): boolean {
     return this.userService.isLogged;

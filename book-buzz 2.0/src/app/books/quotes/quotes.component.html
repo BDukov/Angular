@@ -1,1 +1,23 @@
-<p>quotes works!</p>
+<div class="content">
+    <h2>Quotes</h2>
+    <div class="big-quote">
+        <p>"Life is what happens when you're busy making other plans."</p>
+        <p class="quote-author">- John Lennon</p>
+    </div>
+
+    <div class="quote-cards">
+        <div class="quote-card" *ngFor="let quote of quotesList">
+            <div class="quote-text">
+                <span class="quotation-mark">“</span>
+                <p>
+                    {{quote.quote}}
+                </p>
+                <span class="quotation-mark">”</span>
+            </div>
+            <p class="quote-book">- {{quote.author}}, {{quote.book}}</p>
+        </div>
+
+        <!-- Add more quote-cards here -->
+
+    </div>
+</div>

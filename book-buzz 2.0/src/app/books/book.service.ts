@@ -31,5 +31,10 @@ export class BookService{
     return this.http.get(`${appUrl}/books/${id}/reviews.json`);
   }
 
+  getQuotes() {
+    const { appUrl } = environment;
+    return this.http.get(`${appUrl}/quotes.json`);
+  }
+
 
 }

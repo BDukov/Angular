@@ -4,7 +4,12 @@ You can add global styles to this file, and also import other style files
     margin: 0;
     padding: 0;
 }
-
+/* .cont{
+    background-color: #f8f8fd;
+    opacity: 0.9;
+    background: radial-gradient(circle, transparent 20%, #f8f8fd 20%, #f8f8fd 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f8f8fd 20%, #f8f8fd 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient(#f7c345 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, #f7c345 1.4000000000000001px, #f8f8fd 1.4000000000000001px) -0.7000000000000001px 0;
+    background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
+} */
 html {
     font-size: 62.5%;
 }
@@ -36,4 +41,8 @@ body {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex: 1;
+    background-color: #f8f8fd;
+    opacity: 0.9;
+    background: radial-gradient(circle, transparent 20%, #f8f8fd 20%, #f8f8fd 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f8f8fd 20%, #f8f8fd 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient(#f7c345 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, #f7c345 1.4000000000000001px, #f8f8fd 1.4000000000000001px) -0.7000000000000001px 0;
+    background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
 }
