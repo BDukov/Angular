@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import { Book } from 'src/app/types/book';
-import { map, of } from 'rxjs';
+import { map } from 'rxjs';
+import { LoaderComponent } from 'src/app/shared/loader/loader.component';
 
 @Component({
   selector: 'app-books-page',
@@ -9,8 +10,10 @@ import { map, of } from 'rxjs';
   styleUrls: ['./books-page.component.css'],
 })
 export class BooksPageComponent implements OnInit {
-  booksList: Book[] | any;
+  booksList: Book[] | any = [];
   comments: string[] = [];
+  isLoading: boolean = true;
+  isThereBooks: boolean = false;
 
   constructor(private bookService: BookService) {}
 
@@ -34,7 +37,11 @@ export class BooksPageComponent implements OnInit {
         )
       )
       .subscribe((books) => {
+        this.isLoading = false;
         this.booksList = books;
+        if (this.booksList.length > 0) {
+          this.isThereBooks = true;
+        }
       });
   }
 }

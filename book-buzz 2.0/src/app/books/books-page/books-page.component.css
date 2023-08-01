@@ -22,6 +22,12 @@ h2 {
     padding: 0;
 }
 
+.no-books-container p {
+    display: grid;
+    text-align: center;
+}
+
+
 .book-card {
     display: flex;
     flex-direction: column;

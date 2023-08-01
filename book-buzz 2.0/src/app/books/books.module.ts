@@ -7,26 +7,29 @@ import { NewBookComponent } from './new-book/new-book.component';
 import { FormsModule } from '@angular/forms';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { NewQuoteComponent } from './new-quote/new-quote.component';
+import { SharedModule } from "../shared/shared.module";
 
 
 
 @NgModule({
-  declarations: [
-    BooksPageComponent,
-    QuotesComponent,
-    NewBookComponent,
-    BookDetailsComponent,
-    NewQuoteComponent
-  ],
-  imports: [
-    CommonModule,
-    BooksRoutingModule,
-    FormsModule
-  ],
-  exports: [
-    BooksPageComponent,
-    BookDetailsComponent,
-    NewBookComponent
-  ]
+    declarations: [
+        BooksPageComponent,
+        QuotesComponent,
+        NewBookComponent,
+        BookDetailsComponent,
+        NewQuoteComponent
+    ],
+    exports: [
+        BooksPageComponent,
+        BookDetailsComponent,
+        NewBookComponent,
+        QuotesComponent
+    ],
+    imports: [
+        CommonModule,
+        BooksRoutingModule,
+        FormsModule,
+        SharedModule
+    ]
 })
 export class BooksModule { }

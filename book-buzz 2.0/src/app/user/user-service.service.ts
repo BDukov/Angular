@@ -4,20 +4,17 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subscription, from } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { getAuth } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserServiceService {
-  firestore(firestore: any, arg1: string, uid: any) {
-    throw new Error('Method not implemented.');
-  }
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
   public user$ = this.user$$.asObservable();
 
   user: User | undefined | any;
-  USER_KEY = '[user]';
-  
+
   get isLogged(): boolean {
     return !!this.user;
   }
@@ -27,11 +24,18 @@ export class UserServiceService {
   constructor(private http: HttpClient, private auth: AngularFireAuth) {
     this.subscription = this.user$.subscribe((user) => {
       this.user = user;
-      console.log(user);
-      
     });
   }
 
+  get currentUser(): any {
+    const auth = getAuth();
+    const useR = auth.currentUser;
+    if (useR) {
+      const uid = useR.uid;
+      const email = useR.email;
+      return { uid, email };
+    }
+  }
 
   login(params: Login): Observable<any> {
     return from<any>(
@@ -43,21 +47,16 @@ export class UserServiceService {
     );
   }
 
-  register(user: { email: string; password: string }) {
+  register(user: { email: string; password: string; displayName: string }) {
     return this.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
 
   logout(): any {
-    return from(this.auth.signOut())
-    .pipe(
+    return from(this.auth.signOut()).pipe(
       tap(() => {
         this.user$$.next(undefined);
-        localStorage.removeItem(
-          this.USER_KEY
-        );
       })
     );
-    
   }
 
   ngOnDestroy(): void {
@@ -74,15 +73,3 @@ type Register = {
   email: string;
   password: string;
 };
-function authState(auth: AngularFireAuth) {
-  throw new Error('Function not implemented.');
-}
-
-function doc(firestore: (firestore: any, arg1: string, uid: any) => void, arg1: string, uid: any) {
-  throw new Error('Function not implemented.');
-}
-
-function docData(ref: void): Observable<User> {
-  throw new Error('Function not implemented.');
-}
-

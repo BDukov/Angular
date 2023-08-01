@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
 @NgModule({
   declarations: [
-    ElapsedTimePipe
+    LoaderComponent
   ],
   imports: [
     CommonModule
   ],
-  exports: [ElapsedTimePipe]
+  exports: [ LoaderComponent]
 })
 export class SharedModule { }

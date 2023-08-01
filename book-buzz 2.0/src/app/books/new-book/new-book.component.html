@@ -11,13 +11,6 @@
                 </ng-container>
             </div>
             <div class="form-group">
-                <label for="image">Image URL</label>
-                <input type="text" id="image" name="image" ngModel #inputImage="ngModel" required>
-                <ng-container *ngIf="inputImage.touched">
-                    <p class="error" *ngIf="inputImage.errors?.['required']">Image is required!</p>
-                </ng-container>
-            </div>
-            <div class="form-group">
                 <label for="author">Author</label>
                 <input type="text" id="author" name="author" ngModel #inputAuthor="ngModel" required minlength="5">
                 <ng-container *ngIf="inputAuthor.touched">
@@ -38,6 +31,13 @@
                 <input type="text" id="genre" name="genre" ngModel #inputGerne="ngModel" required>
                 <ng-container *ngIf="inputGerne.touched">
                     <p class="error" *ngIf="inputGerne.errors?.['required']">Author is required!</p>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" id="image" name="image" ngModel #inputImage="ngModel" required>
+                <ng-container *ngIf="inputImage.touched">
+                    <p class="error" *ngIf="inputImage.errors?.['required']">Image is required!</p>
                 </ng-container>
             </div>
             <!-- <div class="form-group">

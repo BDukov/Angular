@@ -16,6 +16,8 @@ export class NewBookComponent {
     private router: Router
   ) {}
 
+  
+
   create(createForm: NgForm): void {
     const { appUrl } = environment;
     const data = createForm.value;

@@ -3,50 +3,46 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
 
 interface Profile {
-  firstName: string;
-  lastName: string;
   email: string;
+  userId: string;
 }
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
   isEditMode: boolean = false;
 
   profileDetails: Profile = {
-    firstName: '',
-    lastName: '',
-    email: ''
+    email: '',
+    userId: '',
   };
 
   form = this.fb.group({
-    firstName: ['', [Validators.required, Validators.minLength(5)]],
-    lastName: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required, Validators.email]]
+    email: ['', [Validators.required, Validators.minLength(5)]],
+    userId: ['', [Validators.required, Validators.minLength(5)]],
   });
 
-  constructor(private fb: FormBuilder, private userService: UserServiceService) { }
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserServiceService
+  ) {}
 
   ngOnInit(): void {
-    const { firstName, lastName, email } = this.userService.user!;
-    let data = Object.keys(this.userService.user);
-    
-    
-    ;
+    let data = this.userService.currentUser;
+    let userEmail = data.email;
+    let userId = data.uid;
+
     this.profileDetails = {
-      firstName,
-      lastName,
-      email
+      email: userEmail,
+      userId: userId,
     };
 
     this.form.setValue({
-      firstName,
-      lastName,
-      email
+      email: userEmail,
+      userId: userId,
     });
   }
-
 }
