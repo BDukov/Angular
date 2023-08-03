@@ -12,9 +12,9 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" ngModel #inputPassword="ngModel" required minlength="5">
+                <input type="password" id="password" name="password" ngModel #inputPassword="ngModel" required minlength="6">
                 <ng-container *ngIf="inputPassword.touched">
-                    <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 5 characters!</p>
+                    <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 6 characters!</p>
                     <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
                 </ng-container>
             </div>

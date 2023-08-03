@@ -1,37 +1,41 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
+import { UserServiceService } from 'src/app/user/user-service.service';
 
 @Component({
   selector: 'app-new-book',
   templateUrl: './new-book.component.html',
   styleUrls: ['./new-book.component.css'],
 })
-export class NewBookComponent {
+export class NewBookComponent implements OnInit {
+  creator: string = '';
+
   constructor(
     private http: HttpClient,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private userService: UserServiceService
   ) {}
 
-  
+  // I'm trying to get the current user's id to be the creator of the book
+  ngOnInit(): void {
+    let data = this.userService.currentUser;
+    this.creator = data.uid;
+  }
 
   create(createForm: NgForm): void {
     const { appUrl } = environment;
-    const data = createForm.value;
-  
+    const { title, author, description, genre, image } = createForm.value;
+
     if (createForm.valid) {
-      console.log(data);
-      
-      this.http.post(`${appUrl}/books.json`, data, {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization:
-              'key=AAAAFaHKJhg:APA91bGZ48eMQh22H5OxPv5Hc8Z_8zG_s77_ETV4ebvagBu7CnCg4OkDcb6PEC9pfH4_X6GJ_WhBEUn9fYw-ApqOL8-493YVKvvBcAsqkkS-zLEk9etPZhnIkZDDtsa640poQ_7w-uOa',
-          },
-        })
+      this.http
+        .post(
+          `${appUrl}/books.json`,
+          { title, author, description, genre, image, userId: this.creator },
+        )
         .subscribe((res) => {
           this.router.navigate(['/books']);
         });

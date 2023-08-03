@@ -24,13 +24,7 @@ export class NewQuoteComponent {
       console.log(data);
 
       this.http
-        .post(`${appUrl}/quotes.json`, data, {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization:
-              'key=AAAAFaHKJhg:APA91bGZ48eMQh22H5OxPv5Hc8Z_8zG_s77_ETV4ebvagBu7CnCg4OkDcb6PEC9pfH4_X6GJ_WhBEUn9fYw-ApqOL8-493YVKvvBcAsqkkS-zLEk9etPZhnIkZDDtsa640poQ_7w-uOa',
-          },
-        })
+        .post(`${appUrl}/quotes.json`, data)
         .subscribe((res) => {
           this.router.navigate(['/books']);
         });

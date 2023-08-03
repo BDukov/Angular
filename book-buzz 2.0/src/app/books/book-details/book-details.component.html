@@ -22,7 +22,11 @@
                         <input type="text" placeholder="Add a review" [(ngModel)]="newReview.reviewText">
                         <button class="button" type="submit" (click)="addReview()">Add Review</button>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="buttons" *ngIf="isOwner">
+            <button class="button-edit" type="submit">Edit Book</button>
+            <button class="button-delete" type="submit">Delete Book</button>
+        </div>
 </div>
