@@ -3,13 +3,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/app/environments/environment';
 import { Review } from '../types/review';
 import { ActivatedRoute } from '@angular/router';
+import { Book } from '../types/book';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class BookService{ 
-
-  constructor(private http: HttpClient ) {  }
+export class BookService {
+  constructor(private http: HttpClient) {}
 
   getBooks() {
     const { appUrl } = environment;
@@ -36,5 +36,13 @@ export class BookService{
     return this.http.get(`${appUrl}/quotes.json`);
   }
 
+  updateBook(id: string, book: Book) {
+    const { appUrl } = environment;
+    return this.http.put(`${appUrl}/books/${id}.json`, book);
+  }
 
+  deleteBook(id: string) {
+    const { appUrl } = environment;
+    return this.http.delete<Book>(`${appUrl}/books/${id}.json`);
+  }
 }

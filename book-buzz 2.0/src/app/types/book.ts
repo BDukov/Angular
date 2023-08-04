@@ -6,7 +6,6 @@ export interface Book {
     genre: string;
     image: string;
     description: string;
-    rating: number;
     reviews: any; //string[] | Post[];
-    userId: UserId;
+    userId: string;
 }

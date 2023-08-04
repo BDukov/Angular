@@ -45,4 +45,10 @@ export class ProfileComponent {
       userId: userId,
     });
   }
+
+  toggleEditMode(): void {
+    this.isEditMode = !this.isEditMode;
+  }
+
+ 
 }

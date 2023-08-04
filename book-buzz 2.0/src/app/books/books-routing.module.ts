@@ -5,6 +5,7 @@ import { QuotesComponent } from "./quotes/quotes.component";
 import { NewBookComponent } from "./new-book/new-book.component";
 import { BookDetailsComponent } from "./book-details/book-details.component";
 import { NewQuoteComponent } from "./new-quote/new-quote.component";
+import { BookEditComponent } from "./book-edit/book-edit.component";
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
         path: 'add-quote',
         component: NewQuoteComponent
+    },
+    {
+        path: 'books/:bookId/edit',
+        component: BookEditComponent
     }
     
 ];

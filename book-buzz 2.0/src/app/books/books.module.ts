@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { NewQuoteComponent } from './new-quote/new-quote.component';
 import { SharedModule } from "../shared/shared.module";
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 
 
@@ -17,7 +18,8 @@ import { SharedModule } from "../shared/shared.module";
         QuotesComponent,
         NewBookComponent,
         BookDetailsComponent,
-        NewQuoteComponent
+        NewQuoteComponent,
+        BookEditComponent
     ],
     exports: [
         BooksPageComponent,

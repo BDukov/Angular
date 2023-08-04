@@ -5,7 +5,7 @@ import { Book } from 'src/app/types/book';
 import { UserServiceService } from 'src/app/user/user-service.service';
 import { Review } from 'src/app/types/review';
 import { delay } from 'rxjs';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
@@ -13,37 +13,30 @@ import { delay } from 'rxjs';
 })
 export class BookDetailsComponent implements OnInit {
   isOwner: boolean = false;
-  dbUser: string[] = []; 
-
-  book: Book | any;
-
+  dbUser: string[] = [];
+  book: undefined | Book | any;
   newReview: Review = {
     reviewText: '',
     rating: 0,
   };
-
   review: Review[] = [];
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private bookService: BookService,
     private userService: UserServiceService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) {}
-
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
-
   ngOnInit(): void {
     this.fetchBookDetails();
     this.fetchBoookReviews();
   }
- 
   ngAfterViewInit() {
     this.isOwnerOfBook();
   }
-
   isOwnerOfBook() {
     let data = this.userService.currentUser;
     let user = data.uid;
@@ -51,24 +44,20 @@ export class BookDetailsComponent implements OnInit {
       this.isOwner = true;
     }
   }
-
   fetchBookDetails(): void {
     const id = this.activatedRoute.snapshot.params['bookId'];
-
     this.bookService.getBookDetails(id).subscribe((book) => {
       this.book = book;
       let createUser = this.book.userId;
       this.dbUser.push(createUser);
     });
   }
-
   fetchBoookReviews(): void {
     const id = this.activatedRoute.snapshot.params['bookId'];
     this.bookService.getBookReviews(id).subscribe((review?) => {
       this.review = Object.values(review);
     });
   }
-
   addReview() {
     const id = this.activatedRoute.snapshot.params['bookId'];
     this.bookService.addReview(id, this.newReview).subscribe(
@@ -82,6 +71,14 @@ export class BookDetailsComponent implements OnInit {
       }
     );
   }
-
-  editReview(review: Review) {}
+  delete() {
+    const id = this.activatedRoute.snapshot.params['bookId'];
+    if(confirm(`Are you sure you want to delete this book?`)){
+      this.bookService.deleteBook(id).subscribe(() => {
+        this.router.navigate(['/books']);
+      });
+    } else {
+      return;
+    }
+  }
 }
