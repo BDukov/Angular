@@ -1,14 +1,47 @@
 <body>
-    <div class="content" *ngIf="!isEditMode">
-        <div class="profile">
-            <div class="profile-image">
-                <img src="../../../assets/profile.png" alt="Profile Picture">
+    <ng-container>
+        <form action="">
+            <div class="content" *ngIf="!isEditMode">
+                <div class="profile">
+                    <div class="profile-image">
+                        <img src="../../../assets/profile.png" alt="Profile Picture">
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-email">Email: {{profileDetails.email}}</h2>
+                    </div>
+                </div>
+                <button class="button" (click)="toggleEditMode()">Edit</button>
+                <div class="content-book">
+                    <h2>Owner's Books</h2>
+                    <div class="owner-books-container">
+                        <div *ngFor="let book of ownerBooks" class="owner-books">
+                            <a routerLink="../../books/{{book.id}}"><img src="{{book.image}}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="profile-info">
-                <h2 class="profile-email">Email: {{profileDetails.email}}</h2>
+        </form>
+    </ng-container>
+
+ <!-- if edit mode ON -->
+    <ng-container>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="content" *ngIf="isEditMode">
+                <div class="profile">
+                    <div class="profile-image">
+                        <img src="../../../assets/profile.png" alt="Profile Picture">
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-email">Email: <input type="text" id="email" formControlName="email"></h2>
+                    </div>
+                </div>
+                <button class="button" type="submit">Save</button>
             </div>
-        </div>
-        <button class="button" (click)="toggleEditMode()">Edit</button>
-    </div>
+        </form>
+    </ng-container>
+
+
+
 </body>
+
 

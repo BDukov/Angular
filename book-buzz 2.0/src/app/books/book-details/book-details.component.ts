@@ -4,7 +4,6 @@ import { BookService } from '../book.service';
 import { Book } from 'src/app/types/book';
 import { UserServiceService } from 'src/app/user/user-service.service';
 import { Review } from 'src/app/types/review';
-import { delay } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-book-details',
@@ -35,6 +34,8 @@ export class BookDetailsComponent implements OnInit {
     this.fetchBoookReviews();
   }
   ngAfterViewInit() {
+    this.fetchBookDetails();
+    this.fetchBoookReviews();
     this.isOwnerOfBook();
   }
   isOwnerOfBook() {

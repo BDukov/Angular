@@ -67,3 +67,23 @@
 .button:hover {
     background-color: #ff9f4d; /* Lighter warm color on hover */
 }
+
+.owner-books-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.owner-books {
+    width: calc(33.33% - 10px); /* Adjust the width as needed to fit 3 in a row */
+    margin-bottom: 20px;
+}
+
+.owner-books img {
+    width: 100%;
+    max-width: 100%; /* Ensure the images don't exceed their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    border-radius: 4px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
+}

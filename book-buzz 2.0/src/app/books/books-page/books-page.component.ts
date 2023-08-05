@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import { Book } from 'src/app/types/book';
 import { map } from 'rxjs';
-import { LoaderComponent } from 'src/app/shared/loader/loader.component';
 
 @Component({
   selector: 'app-books-page',

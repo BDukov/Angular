@@ -5,7 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book } from 'src/app/types/book';
 
-
 @Component({
   selector: 'app-book-edit',
   templateUrl: './book-edit.component.html',
@@ -15,6 +14,7 @@ export class BookEditComponent implements OnInit {
   bookData: undefined | Book | any;
   bookMessage: undefined | string;
   creator: string | any;
+  review: string[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,13 +27,16 @@ export class BookEditComponent implements OnInit {
   ngOnInit(): void {
     let data = this.userService.currentUser;
     this.creator = data.uid;
+
     const bookId = this.activatedRoute.snapshot.paramMap.get('bookId');
     bookId &&
       this.bookService.getBookDetails(bookId).subscribe((book) => {
-        console.warn(book);
-        {
-        }
         this.bookData = book;
+      });
+
+    bookId &&
+      this.bookService.getBookReviews(bookId).subscribe((review?) => {
+        this.review = Object.values(review);
       });
   }
 
@@ -42,6 +45,7 @@ export class BookEditComponent implements OnInit {
     if (this.bookData) {
       data.id = bookId;
       data.userId = this.creator;
+      data.reviews = this.review;
     }
 
     bookId &&
@@ -54,6 +58,6 @@ export class BookEditComponent implements OnInit {
       this.bookMessage = undefined;
     }, 3000);
 
-    this.router.navigate([`/books`]);
+    this.router.navigate([`/books/${bookId}`]);
   }
 }
