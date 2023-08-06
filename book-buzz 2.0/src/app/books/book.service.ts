@@ -20,9 +20,9 @@ export class BookService {
     return this.http.get(`${appUrl}/books/${id}.json`);
   }
 
-  addReview(id: string, review: Review, creat: any) {
+  addReview(id: string, review: Review, creator: any) {
     const { appUrl } = environment;
-    return this.http.post(`${appUrl}/books/${id}/reviews.json`, {creat, ...review});
+    return this.http.post(`${appUrl}/books/${id}/reviews.json`, {creator, ...review});
   }
 
   getBookReviews(id: string) {

@@ -5,6 +5,14 @@ ul {
   list-style: none;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0; /* Add this to ensure the header stays at the left */
+  width: 100%;
+  z-index: 100; /* Add a z-index to ensure the header stays on top of other content */
+}
+
 nav {
   background-color: #f8c291; /* Warm color */
   display: flex;

@@ -14,11 +14,10 @@ export class BookDetailsComponent implements OnInit {
   isOwner: boolean = false;
   dbUser: string[] = [];
   book: undefined | Book | any;
-  creator: string  = '';
+  creatorId: string  = '';
   newReview: Review = {
     reviewText: '',
     rating: 0,
-    creator: ''
   };
   review: Review[] = [];
 
@@ -39,7 +38,7 @@ export class BookDetailsComponent implements OnInit {
     this.fetchBookDetails();
     this.fetchBoookReviews();
     let data = this.userService.currentUser;
-    this.creator = data.email; 
+    this.creatorId = data.email; 
   }
 
   ngAfterViewInit() {
@@ -67,18 +66,14 @@ export class BookDetailsComponent implements OnInit {
   fetchBoookReviews(): void {
     const id = this.activatedRoute.snapshot.params['bookId'];
     this.bookService.getBookReviews(id).subscribe((review?) => {
-      this.review = Object.values(review);
-      console.log(review);
-      
+      this.review = Object.values(review);     
     });
   }
   addReview() {
     const id = this.activatedRoute.snapshot.params['bookId'];
-    this.bookService.addReview(id, this.newReview, this.creator).subscribe(
+    this.bookService.addReview(id, this.newReview, this.creatorId).subscribe(
       (res) => {
-        this.newReview = { reviewText: '', rating: 0, creator: '' };
-        console.log(this.creator);
-        
+        this.newReview = { reviewText: '', rating: 0, };       
         this.fetchBoookReviews();
       },
       (error) => {
