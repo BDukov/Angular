@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
+  loginMessage: undefined | string;
+
   isLoggedIn: boolean = false;
   form: any;
 
@@ -38,7 +40,14 @@ export class LoginComponent implements OnInit {
         () => {
           this.router.navigate(['/books']);
         },
-        (error: any) => {}
+        (error: any) => {
+          this.loginMessage = error.message;
+          setTimeout(() => {
+            this.loginMessage = undefined;
+            console.log(error.message)
+          }, 3000)
+          
+        }
       );
   }
 }

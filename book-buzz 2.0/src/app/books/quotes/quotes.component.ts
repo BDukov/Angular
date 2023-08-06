@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { BookService } from '../book.service';
-import { map } from 'rxjs';
 import { Quote } from 'src/app/types/quote';
 
 @Component({
@@ -10,6 +9,7 @@ import { Quote } from 'src/app/types/quote';
 })
 export class QuotesComponent {
   quotesList: Quote[] | any;
+  isLoading = true;
 
   constructor(private bookService: BookService) {}
 
@@ -20,6 +20,7 @@ export class QuotesComponent {
         let key = Object.keys(this.quotesList);
         let value = Object.values(this.quotesList);
         this.quotesList = value;
+        this.isLoading = false;
       },
       error: (err: any) => {
         console.log(`Eroor: ${err}`);

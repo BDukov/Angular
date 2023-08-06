@@ -21,6 +21,8 @@ export class ProfileComponent {
   booksList: Book[] = [];
   ownerBooks: Book[] | any = [];
 
+  isLoading = true;
+
   profileDetails: Profile = {
     email: '',
     userId: '',
@@ -95,6 +97,7 @@ export class ProfileComponent {
         )
       )
       .subscribe((books) => {
+        this.isLoading = false;
         this.booksList = books;
         this.booksList.map((book) => {
           if (book.userId === this.profileDetails.userId) {

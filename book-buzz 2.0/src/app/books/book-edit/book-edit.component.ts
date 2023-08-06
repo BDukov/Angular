@@ -11,10 +11,11 @@ import { Book } from 'src/app/types/book';
   styleUrls: ['./book-edit.component.css'],
 })
 export class BookEditComponent implements OnInit {
-  bookData: undefined | Book | any;
+  bookData!: undefined | Book | any;
   bookMessage: undefined | string;
   creator: string | any;
   review: string[] = [];
+  isLoading = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -30,8 +31,9 @@ export class BookEditComponent implements OnInit {
 
     const bookId = this.activatedRoute.snapshot.paramMap.get('bookId');
     bookId &&
-      this.bookService.getBookDetails(bookId).subscribe((book) => {
+      this.bookService.getBookDetails(bookId).subscribe((book: any) => {
         this.bookData = book;
+        this.isLoading = false;
       });
 
     bookId &&

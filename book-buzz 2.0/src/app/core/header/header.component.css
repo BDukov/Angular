@@ -43,6 +43,13 @@ nav {
     cursor: pointer;
 }
 
+.menu-right p {
+    color: #fff; /* White text */
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
 .menu-left a:hover,
 .menu-right a:hover {
     background-color: rgba(255, 255, 255, 0.2);

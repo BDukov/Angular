@@ -20,15 +20,29 @@
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" ngModel #inputDescription="ngModel" minlength="10" required></textarea>
+                <textarea id="description" name="description" ngModel #inputDescription="ngModel" minlength="10"
+                    required></textarea>
                 <ng-container *ngIf="inputDescription.touched">
                     <p class="error" *ngIf="inputDescription.errors?.['required']">Description is required!</p>
-                    <p class="error" *ngIf="inputDescription.errors?.['minlength']">Description must be at least 10 characters!</p>
+                    <p class="error" *ngIf="inputDescription.errors?.['minlength']">Description must be at least 10
+                        characters!</p>
                 </ng-container>
             </div>
             <div class="form-group">
                 <label for="genre">Genre</label>
-                <input type="text" id="genre" name="genre" ngModel #inputGerne="ngModel" required>
+                <select name="genre" id="genre" ngModel #inputGerne="ngModel" required>
+                    <option value="Economics">Economics</option>
+                    <option value="Comic-books">Comic books</option>
+                    <option value="Childrens">Children's</option>
+                    <option value="Society">Society</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="Health">Health</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Philosophy">Philosophy</option>
+                    <option value="Self-Help">Self-help</option>
+                </select>
                 <ng-container *ngIf="inputGerne.touched">
                     <p class="error" *ngIf="inputGerne.errors?.['required']">Author is required!</p>
                 </ng-container>
@@ -40,18 +54,8 @@
                     <p class="error" *ngIf="inputImage.errors?.['required']">Image is required!</p>
                 </ng-container>
             </div>
-            <!-- <div class="form-group">
-                <label for="reviews">Comment</label>
-                <textarea id="reviews" name="reviews" ngModel #inputReview="ngModel" minlength="10" required></textarea>
-                <ng-container *ngIf="inputReview.touched">
-                    <p class="error" *ngIf="inputReview.errors?.['required']">Comment is required!</p>
-                    <p class="error" *ngIf="inputReview.errors?.['minlength']">Comment must be at least 10 characters!</p>
-                </ng-container>
-            </div> -->
             <div class="button-group">
                 <button [disabled]="!createForm.valid" type="submit" class="button">Post</button>
-                <!-- <button type="button" class="button">Edit</button> -->
-                <!-- <button type="button" class="button">Delete</button> -->
             </div>
         </form>
     </div>

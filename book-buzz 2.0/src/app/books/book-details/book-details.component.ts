@@ -19,6 +19,9 @@ export class BookDetailsComponent implements OnInit {
     rating: 0,
   };
   review: Review[] = [];
+
+  isLoading: boolean = true;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private bookService: BookService,
@@ -33,11 +36,13 @@ export class BookDetailsComponent implements OnInit {
     this.fetchBookDetails();
     this.fetchBoookReviews();
   }
+
   ngAfterViewInit() {
     this.fetchBookDetails();
     this.fetchBoookReviews();
     this.isOwnerOfBook();
   }
+
   isOwnerOfBook() {
     let data = this.userService.currentUser;
     let user = data.uid;
@@ -51,6 +56,7 @@ export class BookDetailsComponent implements OnInit {
       this.book = book;
       let createUser = this.book.userId;
       this.dbUser.push(createUser);
+      this.isLoading = false;
     });
   }
   fetchBoookReviews(): void {
@@ -65,7 +71,9 @@ export class BookDetailsComponent implements OnInit {
       (res) => {
         this.newReview = { reviewText: '', rating: 0 };
         //reload page
-        this.router.navigate([`/books/${id}`]);
+        // this.router.navigate([`/books/${id}`]);
+        // this.ngOnInit();
+        this.fetchBoookReviews();
       },
       (error) => {
         console.error('Error suubmitting review', error);
@@ -74,7 +82,7 @@ export class BookDetailsComponent implements OnInit {
   }
   delete() {
     const id = this.activatedRoute.snapshot.params['bookId'];
-    if(confirm(`Are you sure you want to delete this book?`)){
+    if (confirm(`Are you sure you want to delete this book?`)) {
       this.bookService.deleteBook(id).subscribe(() => {
         this.router.navigate(['/books']);
       });

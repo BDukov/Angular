@@ -1,4 +1,8 @@
-    <div class="content">
+<div *ngIf="isLoading">
+    <app-loader/>
+  </div>
+   
+   <div class="content">
         <div class="book-details">
             <div class="book-image">
                 <img src="{{book.image}}" alt="Book">
@@ -20,7 +24,7 @@
                     </ul>
                         <div class="add-comment" *ngIf="isLoggedIn">
                             <input type="text" placeholder="Add a review" [(ngModel)]="newReview.reviewText">
-                            <button class="button" type="submit" (click)="addReview()">Add Review</button>
+                            <button class="button" type="button" (click)="addReview()">Add Review</button>
                         </div>
                     </div>
                 </div>

@@ -11,6 +11,11 @@
         <li>{{ email }}</li>
         <li *ngIf="!isLoggedIn"><a routerLink="/auth/login">Login</a></li>
         <li *ngIf="!isLoggedIn"><a routerLink="/auth/register">Register</a></li>
+        <li *ngIf="isLoggedIn">
+            <a routerLink="/auth/profile">
+                Welcome, {{user}}
+            </a>
+        </li>
         <li *ngIf="isLoggedIn"><a routerLink="/auth/profile">Profile</a></li>
         <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
     </ul>
