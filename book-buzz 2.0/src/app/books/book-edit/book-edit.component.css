@@ -1,11 +1,41 @@
-.content {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8c291;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .content {
+    text-align: center;
     max-width: 800px;
-    margin: 40px auto;
+    margin: 100px auto 40px; /* Adjust the margin to add more space down */
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1;
-}
+  }
 
 h2 {
     font-size: 24px;
