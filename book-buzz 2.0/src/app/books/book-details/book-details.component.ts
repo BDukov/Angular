@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, ɵafterNextNavigation } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../book.service';
 import { Book } from 'src/app/types/book';
 import { UserServiceService } from 'src/app/user/user-service.service';
 import { Review } from 'src/app/types/review';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
@@ -14,13 +14,16 @@ export class BookDetailsComponent implements OnInit {
   isOwner: boolean = false;
   dbUser: string[] = [];
   book: undefined | Book | any;
+  creator: string  = '';
   newReview: Review = {
     reviewText: '',
     rating: 0,
+    creator: ''
   };
   review: Review[] = [];
 
   isLoading: boolean = true;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -35,6 +38,8 @@ export class BookDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.fetchBookDetails();
     this.fetchBoookReviews();
+    let data = this.userService.currentUser;
+    this.creator = data.email; 
   }
 
   ngAfterViewInit() {
@@ -63,16 +68,17 @@ export class BookDetailsComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['bookId'];
     this.bookService.getBookReviews(id).subscribe((review?) => {
       this.review = Object.values(review);
+      console.log(review);
+      
     });
   }
   addReview() {
     const id = this.activatedRoute.snapshot.params['bookId'];
-    this.bookService.addReview(id, this.newReview).subscribe(
+    this.bookService.addReview(id, this.newReview, this.creator).subscribe(
       (res) => {
-        this.newReview = { reviewText: '', rating: 0 };
-        //reload page
-        // this.router.navigate([`/books/${id}`]);
-        // this.ngOnInit();
+        this.newReview = { reviewText: '', rating: 0, creator: '' };
+        console.log(this.creator);
+        
         this.fetchBoookReviews();
       },
       (error) => {

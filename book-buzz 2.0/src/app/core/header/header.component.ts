@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/user/user-service.service';
 
@@ -18,7 +18,6 @@ export class HeaderComponent {
   get isLoggedIn(): boolean {
     if (this.userService.isLogged && !this.user) {
       let data = this.userService.currentUser;
-      debugger;
       this.user = data.email;
       console.log(this.user);
     }

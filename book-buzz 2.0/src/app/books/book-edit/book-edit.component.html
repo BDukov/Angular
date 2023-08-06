@@ -1,6 +1,6 @@
 <div *ngIf="isLoading">
-    <app-loader/>
-  </div>
+    <app-loader />
+</div>
 <div class="content">
     <h2>Edit Book</h2>
     <p class="message-p">{{bookMessage}}</p>
@@ -8,7 +8,8 @@
         <form #editBook="ngForm" (ngSubmit)="submit(editBook.value)">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title" #inputTitle="ngModel" ngModel="{{bookData.title}}" required minlength="5">
+                <input type="text" id="title" name="title" #inputTitle="ngModel" ngModel="{{bookData.title}}" required
+                    minlength="5">
                 <ng-container *ngIf="inputTitle.touched">
                     <p class="error" *ngIf="inputTitle.errors?.['required']">Title is required!</p>
                     <p class="error" *ngIf="inputTitle.errors?.['minlength']">Title must be at least 5 characters!</p>
@@ -16,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label for="author">Author</label>
-                <input type="text" id="author" name="author" #inputAuthor="ngModel" ngModel="{{bookData.author}}" >
+                <input type="text" id="author" name="author" #inputAuthor="ngModel" ngModel="{{bookData.author}}">
                 <ng-container *ngIf="inputAuthor.touched">
                     <p class="error" *ngIf="inputAuthor.errors?.['required']">Author is required!</p>
                     <p class="error" *ngIf="inputAuthor.errors?.['minlength']">Author must be at least 5 characters!</p>
@@ -24,10 +25,12 @@
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" #inputDescription="ngModel" ngModel="{{bookData.description}}" ></textarea>
+                <textarea id="description" name="description" #inputDescription="ngModel"
+                    ngModel="{{bookData.description}}"></textarea>
                 <ng-container *ngIf="inputDescription.touched">
                     <p class="error" *ngIf="inputDescription.errors?.['required']">Description is required!</p>
-                    <p class="error" *ngIf="inputDescription.errors?.['minlength']">Description must be at least 10 characters!</p>
+                    <p class="error" *ngIf="inputDescription.errors?.['minlength']">Description must be at least 10
+                        characters!</p>
                 </ng-container>
             </div>
             <div class="form-group">
@@ -51,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Image URL</label>
-                <input type="text" id="image" name="image" #inputImage="ngModel" ngModel="{{bookData.image}}" >
+                <input type="text" id="image" name="image" #inputImage="ngModel" ngModel="{{bookData.image}}">
                 <ng-container *ngIf="inputImage.touched">
                     <p class="error" *ngIf="inputImage.errors?.['required']">Image is required!</p>
                 </ng-container>

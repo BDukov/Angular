@@ -7,7 +7,8 @@
                 <input type="text" id="firstname" name="firstName" formControlName="firstName">
                 <ng-container *ngIf="form.get('firstName')?.touched">
                     <p class="error" *ngIf="form.get('firstName')?.errors?.['required']">First name is required!</p>
-                    <p class="error" *ngIf="form.get('firstName')?.errors?.['minlength']">First name must be at least 5 characters!</p>
+                    <p class="error" *ngIf="form.get('firstName')?.errors?.['minlength']">First name must be at least 5
+                        characters!</p>
                 </ng-container>
             </div>
             <div class="form-group">
@@ -15,7 +16,8 @@
                 <input type="text" id="lastname" name="lastName" formControlName="lastName">
                 <ng-container *ngIf="form.get('lastName')?.touched">
                     <p class="error" *ngIf="form.get('lastName')?.errors?.['required']">Last name is required!</p>
-                    <p class="error" *ngIf="form.get('lastName')?.errors?.['minlength']">Last name must be at least 5 characters!</p>
+                    <p class="error" *ngIf="form.get('lastName')?.errors?.['minlength']">Last name must be at least 5
+                        characters!</p>
                 </ng-container>
             </div>
             <div class="form-group">
@@ -23,7 +25,8 @@
                 <input type="text" id="username" name="email" formControlName="email">
                 <ng-container *ngIf="form.get('email')?.touched">
                     <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
-                    <p class="error" *ngIf="form.get('email')?.errors?.['minlength']">Email must be at least 5 characters!</p>
+                    <p class="error" *ngIf="form.get('email')?.errors?.['minlength']">Email must be at least 5
+                        characters!</p>
                 </ng-container>
             </div>
             <div class="form-group">
@@ -31,19 +34,21 @@
                 <input type="password" id="password" name="password" formControlName="password">
                 <ng-container *ngIf="form.get('password')?.touched">
                     <p class="error" *ngIf="form.get('password')?.errors?.['required']">Password is required!</p>
-                    <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">Password must be at least 5 characters!</p>
+                    <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">Password must be at least 5
+                        characters!</p>
                 </ng-container>
             </div>
             <div class="form-group">
                 <label for="password-confirm">Confirm Password</label>
                 <input type="password" id="password-confirm" name="passwordConfirm" formControlName="passwordConfirm">
                 <ng-container *ngIf="form.get('passwordConfirm')?.touched">
-                    <p class="error" *ngIf="form.get('passwordConfirm')?.errors?.['required']">Repeat Password is required!</p>
+                    <p class="error" *ngIf="form.get('passwordConfirm')?.errors?.['required']">Repeat Password is
+                        required!</p>
                     <p class="error" *ngIf="form.errors?.['matchPasswordsValidator']">Password don't match!</p>
                 </ng-container>
             </div>
             <!-- need to add condition to make button disabled or enabled -->
-            <button type="submit" class="button" [disabled]="form.invalid" >Register</button>
+            <button type="submit" class="button" [disabled]="form.invalid">Register</button>
         </form>
         <p class="login-prompt">If you are already registered, please <a routerLink="/auth/login">Login here</a>.</p>
     </div>

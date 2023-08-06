@@ -16,7 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent ],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent],
   imports: [
     SharedModule,
     BooksModule,
@@ -28,15 +28,15 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     BooksModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyCVoof7Zi9EijxY0l_uRPjhkvp_wfdi9U8",
-      authDomain: "bookbuzz-d98ab.firebaseapp.com",
-      databaseURL: "https://bookbuzz-d98ab-default-rtdb.firebaseio.com",
-      projectId: "bookbuzz-d98ab",
-      storageBucket: "bookbuzz-d98ab.appspot.com",
-      messagingSenderId: "36109280894",
-      appId: "1:36109280894:web:659d1a0ace07a2e3dcda2f"
+      apiKey: 'AIzaSyCVoof7Zi9EijxY0l_uRPjhkvp_wfdi9U8',
+      authDomain: 'bookbuzz-d98ab.firebaseapp.com',
+      databaseURL: 'https://bookbuzz-d98ab-default-rtdb.firebaseio.com',
+      projectId: 'bookbuzz-d98ab',
+      storageBucket: 'bookbuzz-d98ab.appspot.com',
+      messagingSenderId: '36109280894',
+      appId: '1:36109280894:web:659d1a0ace07a2e3dcda2f',
     }),
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [CoreModule, appInterceptorProvider],
   bootstrap: [AppComponent],

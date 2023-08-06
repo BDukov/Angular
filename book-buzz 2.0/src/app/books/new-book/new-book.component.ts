@@ -20,7 +20,6 @@ export class NewBookComponent implements OnInit {
     private userService: UserServiceService
   ) {}
 
-  // I'm trying to get the current user's id to be the creator of the book
   ngOnInit(): void {
     let data = this.userService.currentUser;
     this.creator = data.uid;
@@ -32,10 +31,14 @@ export class NewBookComponent implements OnInit {
 
     if (createForm.valid) {
       this.http
-        .post(
-          `${appUrl}/books.json`,
-          { title, author, description, genre, image, userId: this.creator },
-        )
+        .post(`${appUrl}/books.json`, {
+          title,
+          author,
+          description,
+          genre,
+          image,
+          userId: this.creator,
+        })
         .subscribe((res) => {
           this.router.navigate(['/books']);
         });

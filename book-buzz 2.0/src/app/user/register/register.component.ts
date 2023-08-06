@@ -3,7 +3,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
 import { matchPasswordsValidator } from 'src/app/shared/validators/match-passwords-validator';
-import { User } from 'src/app/types/user';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +19,8 @@ export class RegisterComponent {
     validators: [matchPasswordsValidator('password', 'passwordConfirm')],
   });
 
+  user!: string;
+
   constructor(
     private fb: FormBuilder,
     private userService: UserServiceService,
@@ -33,9 +34,8 @@ export class RegisterComponent {
 
     const userData: any = Object.assign(this.form.value, {
       email: this.form.value.email,
-      // firstName: this.form.value.firstName,
-      // lastName: this.form.value.lastName,
     });
+    console.log(userData);
 
     this.userService
       .register(userData)

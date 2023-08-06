@@ -1,7 +1,7 @@
 <div class="loginMessage">
     <p class="">{{loginMessage}}</p>
 </div>
-    
+
 <div class="content">
     <div class="login-form">
         <h2>Login</h2>
@@ -16,14 +16,17 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" ngModel #inputPassword="ngModel" required minlength="6">
+                <input type="password" id="password" name="password" ngModel #inputPassword="ngModel" required
+                    minlength="6">
                 <ng-container *ngIf="inputPassword.touched">
-                    <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 6 characters!</p>
+                    <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 6 characters!
+                    </p>
                     <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
                 </ng-container>
             </div>
-            <button type="submit" class="button" [disabled]="form.invalid" >Login</button>
+            <button type="submit" class="button" [disabled]="form.invalid">Login</button>
         </form>
-        <p class="register-prompt">If you are not registered, please <a routerLink="/auth/register">Register here</a>.</p>
+        <p class="register-prompt">If you are not registered, please <a routerLink="/auth/register">Register here</a>.
+        </p>
     </div>
 </div>

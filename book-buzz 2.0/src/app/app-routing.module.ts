@@ -6,25 +6,25 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch:'full',
+    pathMatch: 'full',
     redirectTo: '/home',
-  }, 
-  {
-    path: 'home',
-    component: HomeComponent
   },
   {
-    path: "auth",
-    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
   {
     path: '**',
-    component: NotFoundComponent
-  }
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

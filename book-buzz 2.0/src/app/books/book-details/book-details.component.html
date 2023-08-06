@@ -1,36 +1,37 @@
 <div *ngIf="isLoading">
-    <app-loader/>
-  </div>
-   
-   <div class="content">
-        <div class="book-details">
-            <div class="book-image">
-                <img src="{{book.image}}" alt="Book">
+    <app-loader />
+</div>
+
+<div class="content">
+    <div class="book-details">
+        <div class="book-image">
+            <img src="{{book.image}}" alt="Book">
+        </div>
+        <div class="book-info">
+            <h2 class="book-title">{{book.title}}</h2>
+            <p class="book-author">Author: {{book.author}}</p>
+            <p class="book-description">{{book.description}}</p>
+            <p class="book-genre">Genre: {{book.genre}}</p>
+            <div class="rating">
+                <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-value">rating</span>
             </div>
-            <div class="book-info">
-                <h2 class="book-title">{{book.title}}</h2>
-                <p class="book-author">Author: {{book.author}}</p>
-                <p class="book-description">{{book.description}}</p>
-                <p class="book-genre">Genre: {{book.genre}}</p>
-                <div class="rating">
-                    <span class="rating-stars">⭐⭐⭐⭐⭐</span>
-                    <span class="rating-value">rating</span>
-                </div>
-                <div class="comments">
-                    <h3>Reviews</h3>
-                    <!-- TODO - ng FOR all comments -->
-                    <ul class="comment-list" *ngFor="let rev of review">
-                        <li class="comment">{{rev.reviewText}}</li>
-                    </ul>
-                        <div class="add-comment" *ngIf="isLoggedIn">
-                            <input type="text" placeholder="Add a review" [(ngModel)]="newReview.reviewText">
-                            <button class="button" type="button" (click)="addReview()">Add Review</button>
-                        </div>
+            <div class="comments">
+                <h3>Reviews</h3>
+                <ul class="comment-list" *ngFor="let rev of review">
+                    <div class="current-comment">
+                        <li class="comment"> <p>{{rev.creator}}:</p>{{rev.reviewText}}</li>
                     </div>
+                </ul>
+                <div class="add-comment" *ngIf="isLoggedIn">
+                    <input type="text" placeholder="Add a review" [(ngModel)]="newReview.reviewText">
+                    <button class="button" type="button" (click)="addReview()">Add Review</button>
                 </div>
             </div>
-            <div class="buttons" *ngIf="isOwner">
-                <button class="button-edit" type="submit" routerLink="edit">Edit Book</button>
-                <button class="button-delete" type="submit" (click)="delete()">Delete Book</button>
-            </div>
+        </div>
     </div>
+    <div class="buttons" *ngIf="isOwner">
+        <button class="button-edit" type="submit" routerLink="edit">Edit Book</button>
+        <button class="button-delete" type="submit" (click)="delete()">Delete Book</button>
+    </div>
+</div>

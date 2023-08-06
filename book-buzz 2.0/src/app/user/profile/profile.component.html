@@ -1,6 +1,7 @@
 <div *ngIf="isLoading">
-    <app-loader/>
-  </div>
+    <app-loader />
+</div>
+
 <body>
     <ng-container>
         <form action="">
@@ -26,7 +27,7 @@
         </form>
     </ng-container>
 
- <!-- if edit mode ON -->
+    <!-- if edit mode ON -->
     <ng-container>
         <form [formGroup]="form" (ngSubmit)="submit()">
             <div class="content" *ngIf="isEditMode">
@@ -46,5 +47,3 @@
 
 
 </body>
-
-

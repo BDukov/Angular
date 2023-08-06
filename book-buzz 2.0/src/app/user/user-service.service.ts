@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable, Subscription, from } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth } from 'firebase/auth';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -62,7 +63,6 @@ export class UserServiceService {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }
 
 type Login = {

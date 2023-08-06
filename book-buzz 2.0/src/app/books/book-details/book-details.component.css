@@ -130,3 +130,31 @@ p.book-genre {
 .button-delete:hover {
     background-color: #d35400; /* Even darker orange color on hover */
 }
+
+.current-comment {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .current-comment p {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .current-comment li {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+  }
+  
+  .current-comment li p {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .current-comment li p::after {
+    content: ":";
+  }

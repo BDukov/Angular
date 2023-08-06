@@ -21,13 +21,9 @@ export class NewQuoteComponent {
     const data = createForm.value;
 
     if (createForm.valid) {
-      console.log(data);
-
-      this.http
-        .post(`${appUrl}/quotes.json`, data)
-        .subscribe((res) => {
-          this.router.navigate(['/books']);
-        });
+      this.http.post(`${appUrl}/quotes.json`, data).subscribe((res) => {
+        this.router.navigate(['/books']);
+      });
     }
   }
 }

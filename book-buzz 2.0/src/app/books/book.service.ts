@@ -1,8 +1,7 @@
-import { Injectable, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/app/environments/environment';
 import { Review } from '../types/review';
-import { ActivatedRoute } from '@angular/router';
 import { Book } from '../types/book';
 
 @Injectable({
@@ -21,9 +20,9 @@ export class BookService {
     return this.http.get(`${appUrl}/books/${id}.json`);
   }
 
-  addReview(id: string, review: Review) {
+  addReview(id: string, review: Review, creat: any) {
     const { appUrl } = environment;
-    return this.http.post(`${appUrl}/books/${id}/reviews.json`, review);
+    return this.http.post(`${appUrl}/books/${id}/reviews.json`, {creat, ...review});
   }
 
   getBookReviews(id: string) {

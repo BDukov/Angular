@@ -44,9 +44,7 @@ export class LoginComponent implements OnInit {
           this.loginMessage = error.message;
           setTimeout(() => {
             this.loginMessage = undefined;
-            console.log(error.message)
-          }, 3000)
-          
+          }, 3000);
         }
       );
   }
