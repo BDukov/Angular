@@ -19,6 +19,8 @@ export class RegisterComponent {
     validators: [matchPasswordsValidator('password', 'passwordConfirm')],
   });
 
+  registerMessage: undefined | string;
+
   user!: string;
 
   constructor(
@@ -31,11 +33,9 @@ export class RegisterComponent {
     if (this.form.invalid) {
       return;
     }
-
     const userData: any = Object.assign(this.form.value, {
       email: this.form.value.email,
     });
-    console.log(userData);
 
     this.userService
       .register(userData)
@@ -43,7 +43,10 @@ export class RegisterComponent {
         this.router.navigate(['/auth/login']);
       })
       .catch((error: any) => {
-        console.error(error);
+        this.registerMessage = error.message;
+        setTimeout(() => {
+          this.registerMessage = undefined;
+        }, 3000);
       });
   }
 }
