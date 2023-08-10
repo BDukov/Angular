@@ -5,10 +5,28 @@ import { Book } from 'src/app/types/book';
 import { UserServiceService } from 'src/app/user/user-service.service';
 import { Review } from 'src/app/types/review';
 import { FormBuilder } from '@angular/forms';
+import { trigger, style, state, transition, animate } from '@angular/animations';
+
+
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.css'],
+  animations: [
+    trigger('list1', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(500)
+      ])
+    ])
+  ]
 })
 export class BookDetailsComponent implements OnInit {
   isOwner: boolean = false;

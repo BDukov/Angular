@@ -19,7 +19,7 @@
             </div>
             <div class="comments">
                 <h3>Reviews</h3>
-                <ul class="comment-list" *ngFor="let rev of review">
+                <ul @list1 class="comment-list" *ngFor="let rev of review">
                     <div class="current-comment">
                         <li class="comment"> <p>{{rev.creator}}:</p>{{rev.reviewText}}</li>
                     </div>

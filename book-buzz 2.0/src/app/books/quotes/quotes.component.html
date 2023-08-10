@@ -9,9 +9,9 @@
     </div>
 
     <div class="quote-cards">
-        <div class="quote-card" *ngFor="let quote of quotesList">
+        <div @quoteLi class="quote-card" *ngFor="let quote of quotesList">
             <div class="quote-text">
-                <span class="quotation-mark">“</span>
+                <span  class="quotation-mark">“</span>
                 <p>
                     {{quote.quote}}
                 </p>

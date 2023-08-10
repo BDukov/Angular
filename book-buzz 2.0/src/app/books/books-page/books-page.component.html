@@ -2,10 +2,10 @@
     <app-loader />
 </div>
 
-<div class="content" *ngIf="!isLoading">
+<div  class="content" *ngIf="!isLoading">
     <h2>Books</h2>
     <div class="books-container" *ngIf="isThereBooks">
-        <div *ngFor="let book of booksList" class="book-card">
+        <div @bookLi *ngFor="let book of booksList" class="book-card">
             <img src="{{book.image}}" alt="Book 1">
             <div class="book-info">
                 <h3 class="book-title"> {{book.title}}</h3>
