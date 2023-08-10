@@ -35,6 +35,16 @@ h2 {
   border-radius: 4px;
   padding: 20px;
 }
+.book-card:hover {
+  width: 220px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8c291; /* Warm color */
+  color: #fff; /* White text */
+  border-radius: 4px;
+  padding: 20px;
+}
 
 .book-card img {
   width: 100%;

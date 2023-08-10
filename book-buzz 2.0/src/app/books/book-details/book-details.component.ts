@@ -25,6 +25,32 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
         }),
         animate(500)
       ])
+    ]),
+    trigger('list2', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-300px)'
+        }),
+        animate(1000)
+      ])
+    ]),
+    trigger('list3', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(300px)'
+        }),
+        animate(1000)
+      ])
     ])
   ]
 })
