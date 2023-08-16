@@ -19,7 +19,6 @@ export class HeaderComponent {
     if (this.userService.isLogged && !this.user) {
       let data = this.userService.currentUser;
       this.user = data.email;
-      console.log(this.user);
     }
     return this.userService.isLogged;
   }

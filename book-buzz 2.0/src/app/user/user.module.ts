@@ -6,6 +6,8 @@ import { UserRoutingModule } from './user-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
+
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, ProfileComponent],
@@ -15,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    NgxTrimDirectiveModule,
   ],
 })
 export class UserModule {}

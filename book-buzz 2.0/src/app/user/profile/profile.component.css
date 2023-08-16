@@ -87,3 +87,7 @@
     border-radius: 4px; /* Optional: Add rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
 }
+
+.profile-username {
+    font-size: 18px;
+}

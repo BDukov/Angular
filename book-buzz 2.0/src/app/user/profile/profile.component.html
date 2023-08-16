@@ -18,7 +18,7 @@
                 <div class="content-book">
                     <h2>Owner's Books</h2>
                     <div class="owner-books-container">
-                        <div *ngFor="let book of ownerBooks" class="owner-books">
+                        <div @usersBooks *ngFor="let book of ownerBooks" class="owner-books">
                             <a routerLink="../../books/{{book.id}}"><img src="{{book.image}}" alt=""></a>
                         </div>
                     </div>

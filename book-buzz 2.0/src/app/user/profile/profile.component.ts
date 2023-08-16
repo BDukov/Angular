@@ -1,21 +1,40 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
-import { getAuth, updateEmail } from 'firebase/auth';
+import { getAuth, updateEmail, updateProfile } from 'firebase/auth';
 import { BookService } from 'src/app/books/book.service';
 import { map } from 'rxjs';
 import { Book } from 'src/app/types/book';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 interface Profile {
   email: string;
   userId: string;
+  username?: string;
+  image?: string;
 }
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
+  animations: [
+    trigger('usersBooks', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateY(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateY(200px)'
+        }),
+        animate(500)
+      ])
+    ])
+  ]
 })
+
 export class ProfileComponent {
   isEditMode: boolean = false;
   booksList: Book[] = [];
@@ -75,6 +94,7 @@ export class ProfileComponent {
       updateEmail(auth.currentUser, email).then(() => {
         this.toggleEditMode();
       });
+
   }
 
   getBooks() {
