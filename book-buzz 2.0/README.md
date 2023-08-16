@@ -1,27 +1,83 @@
-# BookStore
+<h1>BookBuzz - Angular Project Resume</h1>
+Overview:
+BookBuzz is an immersive web application crafted with Angular 16, offering book enthusiasts a dynamic platform to manage their literary collection, connect with fellow readers, and share profound reviews. The project boasts robust features like user authentication, seamless Firebase integration, personalized profiles, efficient book handling, and an elegant pure CSS design.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+<h1>Key Features:</h1>
+<h2> 1. Authentication:   </h2>
+Robust user authentication system enables secure registration and login.
+Personalized user profiles enhance the tailored experience.
+<p> Logged In users can: </p>
+<ul> 
+  <li> Add new books </li>
+  <li> Add new quotes </li>
+  <li> Write reviews for every book</li>
+  <li> Edit or delete books if they are owners</li>
+  <li> See their Profile page</li>
+  <li> Edit their Profile</li>
+</ul>
+<p> Not logged id users can access: </p>
+<ul> 
+  <li> Home page </li>
+  <li> Login page </li>
+  <li> Register page</li>
+  <li> Books page </li>
+  <li> Qoutes page</li>
+</ul>
 
-## Development server
+<h2> 2. Book Management: </h2>
+Intuitive interface for effortlessly adding new books with titles, authors, descriptions, and reviews.
+Empowering users to edit their book entries for a personalized touch.
+Smooth book deletion process for owners, ensuring content control.
+<h2> 3. Interactive Reviews:   </h2>
+Engaging review system for sharing thoughtful opinions on books.
+Users can contribute reviews for books authored by peers, fostering a vibrant community.
+<h2> 4. Profile Customization: </h2>
+User-friendly profile editing feature allows users to update information and preferences.
+<h2> 5. Inspiring Quotes: </h2>
+Curate memorable quotes from favorite books, creating a collection of literary gems.
+The quotes section adds a touch of elegance to the user experience.
+<h2> 6. Aesthetic CSS: </h2>
+Stylishly designed with pure CSS for an attractive and responsive UI.
+<h2> 7. Firebase Magic:  </h2>
+Seamless Firebase integration as the backend database for efficient data management.
+Real-time synchronization ensures fluid user interactions and data updates.
+<h2> Tech Stack:  </h2>
+<p> Angular 16: Powering the frontend with dynamic and responsive interfaces.  </p>
+<p> TypeScript: Elevating code quality and maintainability.  </p>
+<p> Firebase: Providing real-time data storage and secure authentication.    </p>
+<p> Pure CSS: Crafting a visually appealing and user-centric design. </p>
+<h2> Achievements:  </h2>
+Successfully built a fully functional Angular application from scratch, showcasing advanced features.
+Prioritized responsive design and user-centric interactions for an optimal user experience.
+Collaborated effectively with team members, incorporating feedback to refine features.
+Future Plans:
+Implementing a sophisticated recommendation engine for personalized book suggestions.
+Enabling social sharing to allow users to spread their favorite books and reviews.
+Conclusion:
+BookBuzz exemplifies your mastery in TypeScript, Angular development, Firebase integration, and responsive design. This comprehensive Angular 16 project, boasting book management, reviews, and profiles, showcases your ability to create captivating and user-focused web applications.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h1> DEMO </h1>
 
-## Code scaffolding
+<h2> Demo User </h2>
+<p> email: peter@abv.bg </p>
+<p> password: 123456</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h1> Screenshots </h1>
+<h2> Home Page </h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/499172b9-74cf-409c-8ddd-31918b22cdf6"> </img>
+<h2> Register Page </h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/4403e42d-eeab-4b8e-89a3-f9225ff7ffae"> </img>
+<h2> Login Page </h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/2f410a10-4ff2-473c-b11b-7509ef245bc8"> </img>
+<h2> Books Page</h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/af0403ab-2b71-4614-b6f7-00e3dc67084d"> </img>
+<h2> Quotes Page</h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/c85b4f30-ed71-47bf-9a09-4c18398d07a9"> </img>
+<h2> Add Book </h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/f05075a0-3e66-48aa-9433-a7435edcce06"> </img>
+<h2> Add Quote </h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/428e362a-902f-46cc-bf55-267a97b534cd"> </img>
+<h2> Details Page </h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/f8b3e840-9413-46a0-b8c9-68a727387252"> </img>
+<h2> Error Page</h2>
+<img src="https://github.com/BDukov/BookBuzZ-Angular/assets/107854265/d3f6d9a4-d063-47db-bbd4-66b5e3cff4b1"> </img>
