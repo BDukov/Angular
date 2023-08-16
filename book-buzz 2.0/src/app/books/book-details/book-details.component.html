@@ -8,7 +8,7 @@
         <div @list2 class="book-image">
             <img src="{{book.image}}" alt="Book">
         </div>
-        <div  class="book-info">
+        <div class="book-info">
             <h2 @list3 class="book-title">{{book.title}}</h2>
             <p @list3 class="book-author">Author: {{book.author}}</p>
             <p @list3 class="book-description">{{book.description}}</p>
@@ -18,15 +18,26 @@
                 <span class="rating-value">rating</span>
             </div>
             <div class="comments">
-                <h3 @list3 >Reviews</h3>
+                <h3 @list3>Reviews</h3>
                 <ul @list1 class="comment-list" *ngFor="let rev of review">
                     <div class="current-comment">
-                        <li class="comment"> <p>{{rev.creator}}:</p>{{rev.reviewText}}</li>
+                        <li class="comment">
+                            <p>{{rev.creator}}:</p>{{rev.reviewText}}
+                        </li>
                     </div>
                 </ul>
-                <div class="add-comment" *ngIf="isLoggedIn">
-                    <input type="text" placeholder="Add a review" [(ngModel)]="newReview.reviewText">
+                <!-- <div class="add-comment" *ngIf="isLoggedIn">
+                    <input type="text" placeholder="Add a review" name="review" [(ngModel)]="newReview.reviewText" required>
                     <button class="button" type="button" (click)="addReview()">Add Review</button>
+                </div> -->
+                <div class="add-comment" *ngIf="isLoggedIn">
+                    <form #reviewForm="ngForm" (ngSubmit)="addReview()">
+                        <input type="text" placeholder="Add a review" name="review" [(ngModel)]="newReview.reviewText"
+                            required #reviewInput="ngModel">
+                        <button class="button" type="submit" [disabled]="!reviewForm.valid || !reviewInput.touched">
+                            Add Review
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

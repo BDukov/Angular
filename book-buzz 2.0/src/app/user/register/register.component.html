@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
                 <label for="password-confirm">Confirm Password</label>
-                <input type="password" id="password-confirm" name="passwordConfirm" formControlName="passwordConfirm" trim="">
+                <input type="password" id="passwordConfirm" name="passwordConfirm" formControlName="passwordConfirm" trim="">
                 <ng-container *ngIf="form.get('passwordConfirm')?.touched">
                     <p class="error" *ngIf="form.get('passwordConfirm')?.errors?.['required']">Repeat Password is
                         required!</p>
