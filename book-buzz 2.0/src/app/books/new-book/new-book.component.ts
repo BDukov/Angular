@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
 import { UserServiceService } from 'src/app/user/user-service.service';
@@ -15,7 +15,6 @@ export class NewBookComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private fb: FormBuilder,
     private router: Router,
     private userService: UserServiceService
   ) {}

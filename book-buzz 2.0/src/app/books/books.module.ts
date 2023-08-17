@@ -18,6 +18,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
     BookDetailsComponent,
     NewQuoteComponent,
     BookEditComponent,
+    
   ],
   exports: [
     BooksPageComponent,

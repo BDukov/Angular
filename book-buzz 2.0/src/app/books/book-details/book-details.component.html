@@ -26,10 +26,6 @@
                         </li>
                     </div>
                 </ul>
-                <!-- <div class="add-comment" *ngIf="isLoggedIn">
-                    <input type="text" placeholder="Add a review" name="review" [(ngModel)]="newReview.reviewText" required>
-                    <button class="button" type="button" (click)="addReview()">Add Review</button>
-                </div> -->
                 <div class="add-comment" *ngIf="isLoggedIn">
                     <form #reviewForm="ngForm" (ngSubmit)="addReview()">
                         <input type="text" placeholder="Add a review" name="review" [(ngModel)]="newReview.reviewText"

@@ -37,7 +37,7 @@ h2 {
 }
 .book-card:hover {
   width: 220px;
-  height: 600px;
+  height: 650px;
   display: flex;
   flex-direction: column;
   background-color: #f8c291; /* Warm color */
@@ -80,4 +80,20 @@ h2 {
 
 .button:hover {
   background-color: #d35400; /* Even darker orange color on hover */
+}
+
+.page-container {
+  display: grid;
+  grid-template-columns: 300px 3fr; /* Divide the container into two columns */
+  gap: 20px; /* Add some space between the columns */
+  max-width: 1000px; /* Adjust the maximum width as needed */
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rating-stars{
+  display: flex;
+  justify-content: center;
 }

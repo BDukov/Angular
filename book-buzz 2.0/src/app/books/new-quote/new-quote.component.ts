@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
 
@@ -12,7 +12,6 @@ import { environment } from 'src/app/environments/environment';
 export class NewQuoteComponent {
   constructor(
     private http: HttpClient,
-    private fb: FormBuilder,
     private router: Router
   ) {}
 

@@ -54,6 +54,8 @@ h2 {
 
 .form-group {
     margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: -200px;
 }
 
 .form-group label {
@@ -81,6 +83,9 @@ h2 {
 .button-group {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: -220px;
 }
 
 .button {
@@ -108,4 +113,3 @@ h2 {
     color: red;
     font-size: 14px;
 }
-
