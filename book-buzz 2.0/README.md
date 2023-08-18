@@ -55,6 +55,10 @@ Users can contribute reviews for books authored by peers, fostering a vibrant co
 <li>Seamless Firebase integration as the backend database for efficient data management. </li>
   <li> Real-time synchronization ensures fluid user interactions and data updates.</li>
 </ul>
+<h2> 9. Deployment:  </h2>
+<ul>
+  <li> You can reach BookBuzZ in GitHub Pages here => https://bdukov.github.io/BookBuzZ-Angular/home</li>
+</ul>
 <h2> Tech Stack:  </h2>
 <p> Angular 16: Powering the frontend with dynamic and responsive interfaces.  </p>
 <p> TypeScript: Elevating code quality and maintainability.  </p>
