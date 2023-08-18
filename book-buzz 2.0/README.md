@@ -1,6 +1,6 @@
 <h1>BookBuzz - Angular Project Resume</h1>
-Overview:
-BookBuzz is an immersive web application crafted with Angular 16, offering book enthusiasts a dynamic platform to manage their literary collection, connect with fellow readers, and share profound reviews. The project boasts robust features like user authentication, seamless Firebase integration, personalized profiles, efficient book handling, and an elegant pure CSS design.
+<h2> Overview: </h2>
+BookBuzz is an application for literature lovers. It allows you to easily catalog your favourite books, write insightful reviews, and engage in discussions. You can share thought-provoking quotes from your favourite books, as well as edit your personal information. The project intends to unite book lovers and provide space to discover new reads, and share one's thoughts on literature. The project boasts robust features like user authentication, seamless Firebase integration, personalized profiles, efficient book handling, and an elegant pure CSS design.
 
 <h1>Key Features:</h1>
 <h2> 1. Authentication:   </h2>
