@@ -25,9 +25,11 @@ Personalized user profiles enhance the tailored experience.
 </ul>
 
 <h2> 2. Book Management: </h2>
-Intuitive interface for effortlessly adding new books with titles, authors, descriptions, and reviews.
-Empowering users to edit their book entries for a personalized touch.
-Smooth book deletion process for owners, ensuring content control.
+<ul>
+  <li>Intuitive interface for effortlessly adding new books with titles, authors, descriptions, and reviews. </li>
+  <li> Empowering users to edit their book entries for a personalized touch. </li>
+  <li>Smooth book deletion process for owners, ensuring content control. </li>
+</ul>
 <h2> 3. Interactive Reviews:   </h2>
 Engaging review system for sharing thoughtful opinions on books.
 Users can contribute reviews for books authored by peers, fostering a vibrant community.
