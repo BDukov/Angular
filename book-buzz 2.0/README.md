@@ -34,15 +34,27 @@ Personalized user profiles enhance the tailored experience.
 Engaging review system for sharing thoughtful opinions on books.
 Users can contribute reviews for books authored by peers, fostering a vibrant community.
 <h2> 4. Profile Customization: </h2>
-User-friendly profile editing feature allows users to update information and preferences.
+<ul>
+  <li>User-friendly profile editing feature allows users to update email and manage their owner's books. </li>
+</ul>
 <h2> 5. Inspiring Quotes: </h2>
-Curate memorable quotes from favorite books, creating a collection of literary gems.
-The quotes section adds a touch of elegance to the user experience.
+<ul>
+  <li>Curate memorable quotes from favorite books, creating a collection of literary gems. </li>
+  <li> The quotes section adds a touch of elegance to the user experience.</li>
+</ul>
 <h2> 6. Aesthetic CSS: </h2>
-Stylishly designed with pure CSS for an attractive and responsive UI.
-<h2> 7. Firebase Magic:  </h2>
-Seamless Firebase integration as the backend database for efficient data management.
-Real-time synchronization ensures fluid user interactions and data updates.
+<ul>
+  <li> Stylishly designed with pure CSS for an attractive and responsive UI. </li>
+</ul>
+<h2> 7. Angular Animations:  </h2>
+<ul>
+  <li>Angular animations enrich UX through dynamic effects like smooth slides, and transforms.</li>
+</ul>
+<h2> 8. Firebase Magic:  </h2>
+<ul> 
+<li>Seamless Firebase integration as the backend database for efficient data management. </li>
+  <li> Real-time synchronization ensures fluid user interactions and data updates.</li>
+</ul>
 <h2> Tech Stack:  </h2>
 <p> Angular 16: Powering the frontend with dynamic and responsive interfaces.  </p>
 <p> TypeScript: Elevating code quality and maintainability.  </p>
@@ -56,10 +68,14 @@ Future Plans:
 Implementing a sophisticated recommendation engine for personalized book suggestions.
 Enabling social sharing to allow users to spread their favorite books and reviews.
 Conclusion:
-BookBuzz exemplifies your mastery in TypeScript, Angular development, Firebase integration, and responsive design. This comprehensive Angular 16 project, boasting book management, reviews, and profiles, showcases your ability to create captivating and user-focused web applications.
+BookBuzz exemplifies mastery in TypeScript, Angular development, Firebase integration, and responsive design. This comprehensive Angular 16 project, boasting book management, reviews, and profiles, showcases my ability to create captivating and user-focused web applications.
 
 <h1> DEMO </h1>
-
+<h2> Usage </h2>
+  <ul>
+    <li>npm install</li>
+    <li>ng serve</li>
+  </ul>
 <h2> Demo User </h2>
 <p> email: peter@abv.bg </p>
 <p> password: 123456</p>
