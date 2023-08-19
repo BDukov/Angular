@@ -44,7 +44,7 @@ Users can contribute reviews for books authored by peers, fostering a vibrant co
 </ul>
 <h2> 6. Aesthetic CSS: </h2>
 <ul>
-  <li> Stylishly designed with pure CSS for an attractive and responsive UI. </li>
+  <li> Stylish design with pure CSS for an attractive and responsive UI. </li>
 </ul>
 <h2> 7. Angular Animations:  </h2>
 <ul>
@@ -67,11 +67,10 @@ Users can contribute reviews for books authored by peers, fostering a vibrant co
 <h2> Achievements:  </h2>
 Successfully built a fully functional Angular application from scratch, showcasing advanced features.
 Prioritized responsive design and user-centric interactions for an optimal user experience.
-Collaborated effectively with team members, incorporating feedback to refine features.
-Future Plans:
+<h2>Future Plans:</h2>
 Implementing a sophisticated recommendation engine for personalized book suggestions.
 Enabling social sharing to allow users to spread their favorite books and reviews.
-Conclusion:
+<h2>Conclusion:</h2>
 BookBuzz exemplifies mastery in TypeScript, Angular development, Firebase integration, and responsive design. This comprehensive Angular 16 project, boasting book management, reviews, and profiles, showcases my ability to create captivating and user-focused web applications.
 
 <h1> DEMO </h1>
