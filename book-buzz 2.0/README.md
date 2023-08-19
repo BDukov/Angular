@@ -6,7 +6,7 @@ BookBuzz is an application for literature lovers. It allows you to easily catalo
 <h2> 1. Authentication:   </h2>
 Robust user authentication system enables secure registration and login.
 Personalized user profiles enhance the tailored experience.
-<p> Logged In users can: </p>
+<p> Logged-in users can: </p>
 <ul> 
   <li> Add new books </li>
   <li> Add new quotes </li>
@@ -15,7 +15,7 @@ Personalized user profiles enhance the tailored experience.
   <li> See their Profile page</li>
   <li> Edit their Profile</li>
 </ul>
-<p> Not logged id users can access: </p>
+<p> Not logged-in users can access: </p>
 <ul> 
   <li> Home page </li>
   <li> Login page </li>
@@ -32,7 +32,7 @@ Personalized user profiles enhance the tailored experience.
 </ul>
 <h2> 3. Interactive Reviews:   </h2>
 Engaging review system for sharing thoughtful opinions on books.
-Users can contribute reviews for books authored by peers, fostering a vibrant community.
+Users can submit reviews for books added by other users, fostering a vibrant community.
 <h2> 4. Profile Customization: </h2>
 <ul>
   <li>User-friendly profile editing feature allows users to update email and manage their owner's books. </li>
@@ -53,7 +53,7 @@ Users can contribute reviews for books authored by peers, fostering a vibrant co
 <h2> 8. Firebase Magic:  </h2>
 <ul> 
 <li>Seamless Firebase integration as the backend database for efficient data management. </li>
-  <li> Real-time synchronization ensures fluid user interactions and data updates.</li>
+<li> Real-time synchronization ensures fluid user interactions and data updates.</li>
 </ul>
 <h2> 9. Deployment:  </h2>
 <ul>
